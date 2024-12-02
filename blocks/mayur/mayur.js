@@ -1,5 +1,4 @@
-export default function decorate(block, param1) {
-  console.log("param1 =-----> ", param1);
+export default function decorate(block) {
   console.log(block);
   const secondDiv = block.querySelector("div:nth-of-type(2)");
   const fourthDiv = block.querySelector("div:nth-of-type(4)");
