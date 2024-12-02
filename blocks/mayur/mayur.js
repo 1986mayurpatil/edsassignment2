@@ -3,9 +3,9 @@ export default function decorate(block) {
 
   children.forEach((child, iIndex) => {
     let dynamicClassName = "";
-    if (iIndex >= 0 && iIndex <= 6) {
+    if (iIndex >= 0 && iIndex <= 8) {
       dynamicClassName = "whychooseus";
-    } else if (iIndex >= 7 && iIndex <= 13) {
+    } else if (iIndex >= 9 && iIndex <= 13) {
       dynamicClassName = "helpyouwith";
     }
     child.classList.add(dynamicClassName);
