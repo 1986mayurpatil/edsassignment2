@@ -1,21 +1,16 @@
-export default function decorate(block) {
-  console.log("block ----- mayur");
+export default function decorate(block, param1) {
+  console.log("param1 =-----> ", param1);
   console.log(block);
+  const secondDiv = block.querySelector("div:nth-of-type(2)");
+  const fourthDiv = block.querySelector("div:nth-of-type(4)");
 
-  const cols = [...block.firstElementChild.children];
-  block.classList.add(`columns-${cols.length}-cols`);
-
-  // setup image columns
-  [...block.children].forEach((row) => {
-    [...row.children].forEach((col) => {
-      const pic = col.querySelector("picture");
-      if (pic) {
-        const picWrapper = pic.closest("div");
-        if (picWrapper && picWrapper.children.length === 1) {
-          // picture is only content in column
-          picWrapper.classList.add("columns-img-col");
-        }
-      }
-    });
+  [secondDiv, fourthDiv].forEach((parentDiv) => {
+    if (parentDiv) {
+      const childDivs = parentDiv.querySelectorAll("div");
+      childDivs.forEach((div) => {
+        div.classList.add("whychooseus_class");
+        console.log("Added whychooseus_class to:", div);
+      });
+    }
   });
 }
